@@ -5,7 +5,7 @@ def seed_database():
     with app.app_context():
         db.drop_all()
         db.create_all()
- .
+ 
         author1 = Author(name='Jane Austen')
         author2 = Author(name='Mark Twain')
         db.session.add_all([author1, author2])
