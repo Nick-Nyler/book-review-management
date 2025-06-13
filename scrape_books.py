@@ -1,35 +1,32 @@
 import requests
 from bs4 import BeautifulSoup
-from app import db
+from app import app, db
 from models import Author, Book
 
-def scrape_and_store_books():
+def scrape_books():
     url = 'https://www.gutenberg.org/ebooks/search/?sort_order=downloads'
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    books_added = 0
-    authors_added = 0
+    with app.app_context():
+        added_books = 0
+        for book_item in soup.select(".booklink")[:5]:
+            title = book_item.select_one(".title").text.strip()
+            author_name = book_item.select_one(".subtitle").text.strip()
 
-    book_items = soup.select('li.booklink')[:5]  
-    for item in book_items:
-        title_elem = item.select_one('span.title')
-        author_elem = item.select_one('span.subtitle')
-        
-        if title_elem and author_elem:
-            title = title_elem.text.strip()
-            author_name = author_elem.text.strip()
-            
             author = Author.query.filter_by(name=author_name).first()
             if not author:
                 author = Author(name=author_name)
                 db.session.add(author)
-                db.session.commit()
-                authors_added += 1
-            
-            book = Book(title=title, publication_year=1800, author_id=author.id)
+
+            book = Book(title=title, publication_year=1900, author=author) 
             db.session.add(book)
-            books_added += 1
-    
-    db.session.commit()
-    return books_added, authors_added
+            added_books += 1
+
+        db.session.commit()
+        return added_books
+
+@app.route('/scrape', methods=['GET'])
+def scrape_route():
+    count = scrape_books()
+    return jsonify({"message": f"Added {count} books"})

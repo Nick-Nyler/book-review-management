@@ -1,4 +1,4 @@
-#!/home/nixon/Development/code/phase-4/code-challenge/book-review-platform/venv/bin/python
+#!/home/nixon/Development/code/phase-4/code-challenge/book-review-management/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/nixon/Development/code/phase-4/code-challenge/book-review-platform/venv"
+VIRTUAL_ENV="/home/nixon/Development/code/phase-4/code-challenge/book-review-management/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
