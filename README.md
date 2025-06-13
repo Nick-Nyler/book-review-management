@@ -1,12 +1,12 @@
 #  Book Review Platform
 
-A Flask application where users can manage **Books**, **Authors**, and **Reviews**, with optional **web scraping** to populate book data from the internet.
+A Flask application where users can manage Books, Authors, and Reviews, with optional web scraping to populate book data from the internet.
 
 ---
 
 ##  Features
 
-- Models: `Author`, `Book`, and `Review` with proper relationships.
+- Models: Author, Book, and Review with proper relationships.
 - CRUD API endpoints for managing books.
 - Database migrations using Flask-Migrate.
 - Seed script to populate sample data.
@@ -17,7 +17,6 @@ A Flask application where users can manage **Books**, **Authors**, and **Reviews
 
 ## 🛠 Tech Stack
 
--
 - Python 3.x
 - Flask
 - Flask-SQLAlchemy
@@ -57,13 +56,13 @@ python seed.py
 
 ---
 
-## API Endpoints
+##  API Endpoints
 
 ###  Get All Books
 
 GET /books
 
-### Get a Specific Book by ID
+###  Get a Specific Book by ID
 
 GET /books/<book_id>
 
@@ -122,10 +121,7 @@ book-review-platform/
 Made for a coding exercise. Contributions welcome!
 
 ---
-	
 
+##  License
 
-
-
-
-
+MIT License
