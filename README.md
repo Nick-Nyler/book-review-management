@@ -104,7 +104,7 @@ Content-Type: application/json
 }
 ```
 
-### ❌ Delete a Book
+###  Delete a Book
 
 ```
 DELETE /books/<book_id>
@@ -124,7 +124,7 @@ It will scrape and insert new books and authors into the database.
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 book-review-platform/
@@ -140,12 +140,12 @@ book-review-platform/
 
 ---
 
-## 🧑‍💻 Author
+##  Author
 
 Made for a coding exercise. Contributions welcome!
 
 ---
 
-## 📜 License
+##  License
 
 MIT License
