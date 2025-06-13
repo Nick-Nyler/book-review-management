@@ -122,3 +122,10 @@ book-review-platform/
 Made for a coding exercise. Contributions welcome!
 
 ---
+	
+
+
+
+
+
+
